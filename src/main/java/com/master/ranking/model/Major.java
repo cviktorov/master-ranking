@@ -1,27 +1,60 @@
 package com.master.ranking.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Major {
 
 	private String id;
 	private String name;
+	private String shortName;
 	private int quote;
-	private int ratedCounter;
+	private int ratedStudentsCounter;
+	private List<Student> ratedStudents;
 
-	public Major(String name, int quote) {
-		this(UUID.randomUUID().toString(), name, quote, 0);
+	public Major(String name, String shortName, int quote) {
+		this(UUID.randomUUID().toString(), name, shortName, quote, 0, new ArrayList<>());
 	}
 
-	private Major(String id, String name, int quote, int ratedCounter) {
+	private Major(String id, String name, String shortName, int quote, int ratedCounter, List<Student> ratedStudents) {
 		this.id = id;
 		this.name = name;
 		this.quote = quote;
-		this.ratedCounter = ratedCounter;
+		this.ratedStudentsCounter = ratedCounter;
+		this.ratedStudents = ratedStudents;
+		this.setShortName(shortName);
+	}
+
+	public void rateNext(Student student) {
+		student.setMajor(this);
+		ratedStudents.add(student);
+		ratedStudentsCounter++;
+
+	}
+
+	public boolean hasFreePlaces() {
+		return quote > ratedStudentsCounter;
 	}
 
 	public String getId() {
 		return id;
+	}
+
+	public int getRatedStudentsCounter() {
+		return ratedStudentsCounter;
+	}
+
+	public void setRatedStudentsCounter(int ratedStudentsCounter) {
+		this.ratedStudentsCounter = ratedStudentsCounter;
+	}
+
+	public List<Student> getRatedStudents() {
+		return ratedStudents;
+	}
+
+	public void setRatedStudents(List<Student> ratedStudents) {
+		this.ratedStudents = ratedStudents;
 	}
 
 	public void setId(String id) {
@@ -45,17 +78,24 @@ public class Major {
 	}
 
 	public int getRatedCounter() {
-		return ratedCounter;
+		return ratedStudentsCounter;
 	}
 
 	public void setRatedCounter(int ratedCounter) {
-		this.ratedCounter = ratedCounter;
+		this.ratedStudentsCounter = ratedCounter;
 	}
 
 	@Override
 	public String toString() {
-		return name;
+		return shortName;
 	}
 
-	
+	public String getShortName() {
+		return shortName;
+	}
+
+	public void setShortName(String shortName) {
+		this.shortName = shortName;
+	}
+
 }

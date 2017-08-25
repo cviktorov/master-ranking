@@ -5,20 +5,37 @@ import java.util.UUID;
 
 public class Student {
 
+	public enum SexType{
+		MALE, FEMALE
+	}
+
 	private String id;
 	private String name;
 	private double scoring;
+	private SexType sex;
+	private String university;
+	private Major major;
 	private List<Major> majors;
 
-	public Student(String name, double scoring, List<Major> majors) {
-		this(UUID.randomUUID().toString(), name, scoring, majors);
+	public Student(String name, double scoring, List<Major> majors, SexType sex, String university) {
+		this(UUID.randomUUID().toString(), name, scoring, majors, sex, university);
 	}
 
-	public Student(String id, String name, double scoring, List<Major> majors) {
+	public Student(String id, String name, double scoring, List<Major> majors, SexType sex, String university) {
 		this.id = id;
 		this.name = name;
 		this.scoring = scoring;
 		this.majors = majors;
+		this.sex = sex;
+		this.university = university;
+	}
+
+	public Major getMajor() {
+		return major;
+	}
+
+	public void setMajor(Major major) {
+		this.major = major;
 	}
 
 	public String getId() {
@@ -51,6 +68,30 @@ public class Student {
 
 	public void setMajors(List<Major> majors) {
 		this.majors = majors;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", sex=" + sex + ", university=" + university + ", major=" + major
+				+ ", majors=" + majors + "]";
+	}
+
+	public SexType getSex() {
+		return sex;
+	}
+
+	public void setSex(SexType sex) {
+		this.sex = sex;
+	}
+
+	public String getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(String university) {
+		this.university = university;
 	}
 
 }

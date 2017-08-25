@@ -22,12 +22,12 @@
 				<h:outputText value="#{student.name}" />
 			</p:column>
 
-			<p:column headerText="Бал" sortBy="#{student.scoring}">
-				<h:outputText value="#{student.scoring}" />
+			<p:column headerText="Университет" sortBy="#{student.university}">
+				<h:outputText value="#{student.university}" />
 			</p:column>
 
-			<p:column headerText="Желания">
-				<h:outputText value="#{student.majors}" />
+			<p:column headerText="Приет специалност" sortBy="#{student.major}">
+				<h:outputText value="#{student.major}" />
 			</p:column>
 		</p:dataTable>
 	</h:form>

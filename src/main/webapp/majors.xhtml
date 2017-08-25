@@ -12,24 +12,22 @@
 		type="text/javascript"></script>
 </h:head>
 <h:body>
+	<h:form>
+		<p:dataTable var="major" value="#{MajorView.majors}">
+			<p:column headerText="Id" sortBy="#{major.id}">
+				<h:outputText value="#{major.id}" />
+			</p:column>
 
+			<p:column headerText="Специалност" sortBy="#{major.name}">
+				<h:outputText value="#{major.name}" />
+			</p:column>
 
-	<p:dataTable var="car" value="#{dtBasicView.cars}">
-		<p:column headerText="Id">
-			<h:outputText value="#{car.id}" />
-		</p:column>
+			<p:column headerText="Квота" sortBy="#{major.quote}">
+				<h:outputText value="#{major.quote}" />
+			</p:column>
 
-		<p:column headerText="Year">
-			<h:outputText value="#{car.year}" />
-		</p:column>
+		</p:dataTable>
+	</h:form>
 
-		<p:column headerText="Brand">
-			<h:outputText value="#{car.brand}" />
-		</p:column>
-
-		<p:column headerText="Color">
-			<h:outputText value="#{car.color}" />
-		</p:column>
-	</p:dataTable>
 </h:body>
 </html>

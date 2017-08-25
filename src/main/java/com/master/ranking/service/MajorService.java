@@ -12,14 +12,23 @@ import com.master.ranking.model.Major;
 @ApplicationScoped
 public class MajorService {
 
-	public final static List<Major> majors;
+	private static List<Major> majors;
 
-	static {
-		 majors = Arrays.asList(
-				  new Major("Вградени системи", 8),
-				  new Major("Дискретни и алгебрични структури", 5),
-				  new Major("Вградени системи", 8)
-				  );
+	public MajorService() {
+		majors = Arrays.asList(new Major("Вградени системи", "ВС", 3),
+				new Major("Дискретни и алгебрични структури", "ДАС", 2),
+				new Major("Електронен бизнес и електронно управление", "ЕБЕУ", 1),
+				new Major("Изкуствен интелект", "ИИ", 3), new Major("Информационни системи", "ИС", 2),
+				new Major("Логика и алгоритми", "ЛА", 2), new Major("Механика и роботика", "МР", 1),
+				new Major("Компютърна графика", "КГ", 3));
+	}
+
+	public List<Major> getMajors() {
+		return majors;
+	}
+
+	public void setMajors(List<Major> majors) {
+		MajorService.majors = majors;
 	}
 
 }

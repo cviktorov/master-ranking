@@ -1,5 +1,6 @@
 package com.master.ranking.view;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,16 +13,18 @@ import com.master.ranking.service.StudentService;
 
 @ManagedBean(name = "StudentView")
 @ViewScoped
-public class StudentView {
+public class StudentView implements Serializable{
+
+	private static final long serialVersionUID = -7176412219060228381L;
 
 	private List<Student> students;
-
+ 
 	@ManagedProperty("#{studentService}")
 	private StudentService service;
 
 	@PostConstruct
 	public void init() {
-		students = service.createStudents();
+		students = service.getStudents();
 	}
 
 	public List<Student> getStudents() {
