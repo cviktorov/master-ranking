@@ -41,21 +41,21 @@ public class StudentService implements Serializable {
 		majors = majorService.getMajors();
 		universities = universitiesService.getUniversities();
 		students = Arrays.asList(
-				new Student("Христо Илиев Димитров", 10.13, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Савина Димитрова Димитрова", 9.01, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
-				new Student("Маргарита Антонова Кацарска", 8.43, randomNBeweenMajors(4), SexType.FEMALE, randomUni()),
-				new Student("Симеон Кирилов Димитров", 9.95, randomNBeweenMajors(5), SexType.MALE, randomUni()),
-				new Student("Йордан Лазаров Темелков", 9.51, randomNBeweenMajors(5), SexType.MALE, randomUni()),
-				new Student("Ивайло Стефанов Иванов", 9.52, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Александър Миланов Миланов", 9.53, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Олег Златанов Златанов", 9.54, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Иван Георгиев Бодуров", 9.5, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Камен Георгиев Хърсев", 9.56, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Дянко Венцеславов Дянков", 9.57, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Ивелина Стоянова Костадинова", 9.58, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
-				new Student("Любомир Емилов Любомиров", 9.59, randomNBeweenMajors(3), SexType.MALE, randomUni()),
-				new Student("Кристина Анатолиева Митева", 9.6, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
-				new Student("Тодор Симеонов Спасов", 10, randomNBeweenMajors(3), SexType.MALE, randomUni()));
+				new Student("Христо", 10.13, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Савина", 9.01, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
+				new Student("Маргарита", 8.43, randomNBeweenMajors(4), SexType.FEMALE, randomUni()),
+				new Student("Симеон", 9.95, randomNBeweenMajors(5), SexType.MALE, randomUni()),
+				new Student("Йордан", 9.51, randomNBeweenMajors(5), SexType.MALE, randomUni()),
+				new Student("Ивайло", 9.52, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Александър", 9.53, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Олег", 9.54, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Иван", 9.5, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Камен", 9.56, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Дянко", 9.57, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Ивелина", 9.58, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
+				new Student("Любомир", 9.59, randomNBeweenMajors(3), SexType.MALE, randomUni()),
+				new Student("Кристина", 9.6, randomNBeweenMajors(3), SexType.FEMALE, randomUni()),
+				new Student("Тодор", 10, randomNBeweenMajors(3), SexType.MALE, randomUni()));
 	}
 
 	public StudentService() {
